@@ -322,7 +322,7 @@ try {
 
         <div id="qr-code-form" class="hidden qr-code">
             <h4>Scan QR Code to Pay</h4>
-            <img src="https://via.placeholder.com/200" alt="QR Code">
+            <img src="img/QR.webp" alt="QR Code Payment">
             <p>Scan this QR code with your mobile banking app</p>
         </div>
 
