@@ -12,6 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $address = htmlspecialchars(trim($_POST['address'] ?? ''), ENT_QUOTES, 'UTF-8');
         $phone = htmlspecialchars(trim($_POST['phone'] ?? ''), ENT_QUOTES, 'UTF-8');
         $zipcode = htmlspecialchars(trim($_POST['zipcode'] ?? ''), ENT_QUOTES, 'UTF-8');
+        
         // Validate required fields
         if (!$username || !$password || !$address || !$phone || !$zipcode) {
             throw new Exception("All fields are required");
