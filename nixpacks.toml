@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["php81", "php81Extensions.pdo", "php81Extensions.pdo_pgsql"]
+nixPkgs = ["php81", "php81Packages.composer", "php81Extensions.pdo", "php81Extensions.pdo_pgsql"]
 
 [phases.build]
 cmds = ["composer install --ignore-platform-reqs"]
@@ -8,3 +8,6 @@ cmds = ["composer install --ignore-platform-reqs"]
 startCommand = "php -S 0.0.0.0:${PORT} -t ."
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
+
+[build]
+builder = "dockerfile"
