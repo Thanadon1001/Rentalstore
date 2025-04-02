@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to StyleSwap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f8f9fe;
+            background-image: 
+                radial-gradient(at 90% 10%, #e2e8ff 0px, transparent 50%),
+                radial-gradient(at 10% 90%, #f0f1ff 0px, transparent 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.05),
+                0 1px 3px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .logo {
+            margin-bottom: 35px;
+        }
+
+        .logo i {
+            font-size: 48px;
+            color: #4b5563;
+            transition: transform 0.3s ease;
+        }
+
+        .logo i:hover {
+            transform: rotate(10deg);
+        }
+
+        h2 {
+            color: #374151;
+            font-size: 28px;
+            margin-bottom: 40px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .btn-container {
+            display: grid;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 18px;
+            font-size: 16px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .old-customer {
+            background: #4b5563;
+            color: white;
+            box-shadow: 0 4px 6px rgba(75, 85, 99, 0.1);
+        }
+
+        .new-customer {
+            background: white;
+            color: #4b5563;
+            border: 2px solid #4b5563;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .old-customer:hover {
+            background: #374151;
+        }
+
+        .new-customer:hover {
+            background: #f8fafc;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 25px 0;
+            color: #9ca3af;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .divider span {
+            padding: 0 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 25px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .btn {
+                padding: 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-tshirt"></i>
+        </div>
+        <h2>Welcome to StyleSwap</h2>
+        <div class="btn-container">
+            <button class="btn old-customer" onclick="redirectToPage('login.php')">
+                <i class="fas fa-user"></i>
+                Existing Customer
+            </button>
+            <div class="divider">
+                <span>or</span>
+            </div>
+            <button class="btn new-customer" onclick="redirectToPage('address.php')">
+                <i class="fas fa-user-plus"></i>
+                New Customer
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToPage(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
