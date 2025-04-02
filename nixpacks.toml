@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["php81", "php81Extensions.pdo", "php81Extensions.pdo_pgsql", "composer"]
+nixPkgs = ["php81", "php81Extensions.pdo", "php81Extensions.pdo_pgsql"]
 
 [phases.build]
 cmds = ["composer install --ignore-platform-reqs"]
