@@ -7,12 +7,11 @@ require_once 'connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         // Get form data with validation
-        $username = filter_input(INPUT_POST, 'fullname', FILTER_SANITIZE_STRING);
+        $username = htmlspecialchars(trim($_POST['fullname'] ?? ''), ENT_QUOTES, 'UTF-8');
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
-        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
-        $zipcode = filter_input(INPUT_POST, 'zipcode', FILTER_SANITIZE_STRING);
-
+        $address = htmlspecialchars(trim($_POST['address'] ?? ''), ENT_QUOTES, 'UTF-8');
+        $phone = htmlspecialchars(trim($_POST['phone'] ?? ''), ENT_QUOTES, 'UTF-8');
+        $zipcode = htmlspecialchars(trim($_POST['zipcode'] ?? ''), ENT_QUOTES, 'UTF-8');
         // Validate required fields
         if (!$username || !$password || !$address || !$phone || !$zipcode) {
             throw new Exception("All fields are required");
