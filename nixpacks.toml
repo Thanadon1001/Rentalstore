@@ -5,7 +5,7 @@ nixPkgs = ["php81", "php81Packages.composer", "php81Extensions.pdo", "php81Exten
 cmds = ["composer install --ignore-platform-reqs"]
 
 [deploy]
-startCommand = "php -S 0.0.0.0:$PORT -t ."
+startCommand = "php -S 0.0.0.0:8080 -t ."
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
 
